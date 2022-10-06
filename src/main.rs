@@ -7,8 +7,8 @@ fn calculadora(v: Vec<&str>, tam: usize){
     loop {
         if n == 0 {
             let operador = v[n + 1];
-            let n1: f32 = v[n].trim().parse().expect("DEU ERRO NO N1");
-            let n2: f32 = v[n + 2].trim().parse().expect("DEU ERRO NO N2");
+            let n1: f32 = v[n].trim().parse().expect("ERRO NA LEITURA");
+            let n2: f32 = v[n + 2].trim().parse().expect("ERRO NA LEITURA");
             let operacao: f32 = match operador {
                 "+" => n1 + n2,
                 "-" => n1 - n2,
@@ -26,7 +26,7 @@ fn calculadora(v: Vec<&str>, tam: usize){
             };
         }else {
             let operador = v[n + 2];
-            let n2: f32 = v[n + 3].trim().parse().expect("DEU ERRO NO N2");
+            let n2: f32 = v[n + 3].trim().parse().expect("ERRO NA LEITURA");
             let operacao: f32 = match operador {
                 "+" => calculo + n2,
                 "-" => calculo - n2,
@@ -55,11 +55,4 @@ fn main() {
     let v: Vec<&str> = numero1.trim().split_whitespace().collect();
     let tam = v.len();
     calculadora(v, tam);
-//    println!("tamanho do Vec {}", tam);
-//   println!("n° 3 {}", v[2]);
-//    for s in numero1{
-//        println!('{:?}', s)
-//      }
-//    println!('Esse e seu numero: {}', numero1);
-
 }
